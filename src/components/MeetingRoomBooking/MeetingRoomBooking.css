@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f2ee;
+}
+
+input,
+select {
+  font-family: 'DM Sans', sans-serif;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+.booking-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.del-btn {
+  transition: all 0.15s;
+}
+
+.del-btn:hover {
+  background: #e85d3a !important;
+  color: white !important;
+}
+
+.submit-btn {
+  transition: all 0.15s;
+}
+
+.submit-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.room-chip:hover {
+  opacity: 0.8;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ccc !important;
+}
