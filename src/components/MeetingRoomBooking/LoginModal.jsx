@@ -34,7 +34,7 @@ export default function LoginModal({ onSubmit }) {
             />
           </div>
           <button type="submit" style={styles.modalSubmitBtn} className="submit-btn">
-            Enter RoomSync
+            Enter MeetSpace
           </button>
         </form>
       </div>

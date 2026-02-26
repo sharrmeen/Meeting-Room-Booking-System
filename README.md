@@ -1,16 +1,30 @@
-# React + Vite
+#  MeetSpace - Meeting Room Booking System
+A lightweight React prototype for booking shared meeting rooms intentionally scoped to demonstrate core booking logic, conflict detection, and access control.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- Book from 3 predefined rooms with conflict detection
+- Prevents overlapping bookings with specific error messages
+- Name-based access control - only the creator can cancel their booking
+- Search, filter by room, date, and sort by time
+- Persists bookings via localStorage across page refreshes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running Locally
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Storage
 
-## Expanding the ESLint configuration
+Bookings are stored in `localStorage` under the key `mrb_bookings`. This is intentional for the prototype scope - the app is structured so that the booking state and logic can be cleanly swapped out for API calls to a backend (e.g. Express + PostgreSQL or Firebase) with minimal changes. The `hasOverlap` check would move server-side in production.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## The Idea
+
+Most meeting room tools are buried inside heavy platforms like Google Calendar or Outlook. MeetSpace is the opposite - a focused, standalone booking layer that any small team can drop into their workflow without committing to a full calendar suite.
+
+
+## License
+This project is licensed under the MIT License
+MIT © 
