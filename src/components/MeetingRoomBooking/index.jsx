@@ -52,6 +52,7 @@ export default function MeetingRoomBooking() {
 
   useEffect(() => {
     const today = getTodayLocalISO();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setForm((f) => (f.date < today ? { ...f, date: today } : f));
   }, []);
 
@@ -95,18 +96,27 @@ export default function MeetingRoomBooking() {
 
   function handleLogin(name) {
     const trimmed = name.trim();
-    if (!trimmed) return;
+    if (!trimmed) {
+      setError("Name cannot be empty. Please enter your name.");
+      return;
+    }
     setCurrentUser(trimmed);
     try {
       localStorage.setItem(CURRENT_USER_KEY, trimmed);
-    } catch {}
+    } catch (error) {
+      console.error("Failed to save user to localStorage:", error);
+      setError("An error occurred while saving your login. Please try again.");
+    }
   }
 
   function handleLogout() {
     setCurrentUser(null);
     try {
       localStorage.removeItem(CURRENT_USER_KEY);
-    } catch {}
+    } catch (error) {
+      console.error("Failed to remove user from localStorage:", error);
+      setError("An error occurred while logging out. Please try again.");
+    }
   }
 
   function handleDelete(id) {
