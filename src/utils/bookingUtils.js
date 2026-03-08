@@ -23,7 +23,7 @@ export function hasOverlap(bookings, roomId, date, start, end, excludeId = null)
       b.room === roomId &&
       b.date === date &&
       toMinutes(b.start) < newEnd &&
-      toMinutes(b.end) > newStart
+      toMinutes(b.end+15) > newStart
   );
 }
 
